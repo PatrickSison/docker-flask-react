@@ -22,5 +22,4 @@ RUN sudo apt-get install -y nodejs
 
 # RUN ls
 # Installs the necessary packages for the back end
-RUN pip3 install --upgrade pip3
-RUN . /app/api/activate
+RUN pip3 install --upgrade pip
