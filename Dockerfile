@@ -1,7 +1,7 @@
 FROM ubuntu:latest
 LABEL maintainer="Patrick Sison"
 
-EXPOSE 80 443 3000 3001 8000 5432
+EXPOSE 80 443 3000 3001 8000
 
 RUN apt-get update -y
 RUN apt-get install -yq sudo python3-pip python3 virtualenv curl
