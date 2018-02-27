@@ -1,10 +1,9 @@
 FROM ubuntu:latest
-LABEL maintainer="Patrick Sison"
 
 EXPOSE 80 443 3000 3001 8000
 
 RUN apt-get update -y
-RUN apt-get install -yq sudo python3-pip python3 virtualenv curl
+RUN apt-get install -yq sudo python3-pip python3 virtualenv curl xmlsec1 nginx
 
 # # Adds the current directory to the container
 RUN mkdir /app
@@ -20,6 +19,7 @@ RUN sudo apt-get install -y nodejs
 # # Updates npm to the latest version
 # RUN npm install -g npm
 
-# RUN ls
 # Installs the necessary packages for the back end
 RUN pip3 install --upgrade pip
+# Installs core requirements and sets up server
+RUN pip3 install Flask psycopg2 Flask-SQLAlchemy uwsgi pysaml2
